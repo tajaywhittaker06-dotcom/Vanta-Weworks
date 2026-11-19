@@ -7,6 +7,7 @@ import { Footer } from "@/components/layout/footer";
 import { HideOnAdmin } from "@/components/layout/hide-on-admin";
 import { OrganizationJsonLd } from "@/components/seo/organization-jsonld";
 import "./globals.css";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -86,6 +87,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <HideOnAdmin>
           <Footer />
         </HideOnAdmin>
+        {/* Velora AI chat widget (Vanta Webworks) */}
+        <Script
+          src="https://ai-chatbot-eight-pied.vercel.app/widget.js"
+          data-client-id="b3290c39-f6b1-444b-b400-dccbe7eb9481"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
